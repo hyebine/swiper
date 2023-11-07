@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.bg-check {
+    background-color: gray;
+}
+
+.rel {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.jcb {
+    justify-content: space-between;
+}
+
+.aic {
+    align-items: center;
+}
+
+.ofh {
+    overflow: hidden;
+}
+
+.h-0 {
+    height: 0;
+}
+
+.h100 {
+    height: 100px;
+}
+
+.h300 {
+    height: 300px;
+}
+
+.h200 {
+    height: 200px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w1200 {
+    width: 1200px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.swiper-wrapper {
+    width: 100000px;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.swiper-slide {
+    opacity: 0;
+    transition: .5s;
+
+}
+
+
+.swiper-slide.act {
+    /*act 뿐만 아니라 swiper-slide도 넣어서 우선순위*/
+    opacity: 1;
+    /*활성화*/
+    z-index: 1000;
+}
+
+/*추가*/
+.swiper-slide a {
+    text-decoration: none;
+    display: flex;
+    height: 100%; /*rel %가 먹히는 순간은 엄마 높이가 h300지정되어 있으면 됨 auto가 아니면 가능  */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+}
