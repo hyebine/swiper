@@ -38,7 +38,7 @@
     }
 
     .container {
-      max-width: 1280px;
+      width: 1280px;
       margin: 0 auto;
     }
 
@@ -72,6 +72,17 @@
 
     /* 상단슬라이드 */
 
+    #mainBanner {
+      overflow: hidden;
+      /*너비는 화면 너비 만큼*/
+    }
+
+    #mainBanner .swiper {
+      overflow: visible;
+      !important
+      /*너비가 엄청 큼 */
+    }
+
     #mainBanner .swiper-slide {
       height: 600px;
       display: flex;
@@ -79,14 +90,7 @@
       align-items: center;
       font-size: 1.5em;
       background-color: aliceblue;
-    }
-
-    #mainBanner .container {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-
+      border: 1px solid #ccc;
     }
   </style>
 
@@ -141,7 +145,7 @@
 
   <div id="mainBanner">
     <!-- 9개의 슬라이드로 swiper 높이는 600 -->
-    <div class="swiper">
+    <div class="swiper container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 1</div>
         <div class="swiper-slide">Slide 2</div>
@@ -156,10 +160,10 @@
 
       <div class="swiper-pagination"></div>
 
-      <div class="container">
-        <div class="swiper-button-prev abs"></div>
-        <div class="swiper-button-next abs"></div>
-      </div>
+
+      <div class="swiper-button-prev abs"></div>
+      <div class="swiper-button-next abs"></div>
+
     </div>
   </div>
   <script>
@@ -167,8 +171,8 @@
 
       loop: true,
       slidesPerView: 1.8,
-      spaceBetween: 1,
-      centeredSlides: true,
+      spaceBetween: 0,
+      centeredSlides: true, //센터중심 
 
       pagination: {
         el: '#mainBanner .swiper-pagination',
