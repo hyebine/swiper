@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#topBanner {
+  background-color: green;
+  text-align: center;
+  line-height: 3;
+  color: white;
+  position: relative;
+}
+
+#topBanner .swiper-pagination {
+  position: absolute;
+  width: auto;
+  right: 1rem;
+  left: unset; /*unset 안주겠다 */
+  line-height: 2;
+
+
+}
+
+header {
+  border-bottom: 1px solid #222;
+}
+
+#mainBanner {
+  height: 600px;
+  background-color: gainsboro;
+}
+
+#mainBanner .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*하나를 레드로 바꿔주기 */
+.swiper-pagination-bullet-active:first-child { /*요소검사에서 찾기 */
+  background-color: red;
+}

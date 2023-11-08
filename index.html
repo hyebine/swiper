@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여러 플랫폼에 지원되는 유명한 슬라이드 플러그인 Swiper</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="swiper" id="topBanner">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">회원혜택알림</div>
+        <div class="swiper-slide">앱다운로드 바로가기</div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="container">
+      <h1>로고</h1>
+    </div>
+
+  </header>
+
+  <div class="swiper" id="mainBanner">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+  const topswiper = new Swiper('#topBanner.swiper', {
+      loop: true,
+      pagination: {
+        el: '#topBanner .swiper-pagination',
+        type: "fraction",
+      },
+
+    });
+
+
+    const swiper = new Swiper('#mainBanner.swiper', {
+      loop: true,
+      pagination: {
+        el: '#mainBanner .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '#mainBanner .swiper-button-next',
+        prevEl: '#mainBanner .swiper-button-prev',
+      },
+    });
+
+  </script>
+</body>
+
+</html>
