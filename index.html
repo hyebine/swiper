@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 바로가기(파비콘) > SEO최적화 > 광고추적치 -->
+  <!-- 폰트 -->
+  <!-- 초기화 -->
+  <!-- 공통클래스 부트스트랩 -->
+  <!-- 플러그인 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- 내꺼 -->
+  <style>
+    /* 구글폰트 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans KR';
+      font-weight: 400;
+    }
+
+    .darkbrown {
+      background-color: darkorchid;
+      text-align: center;
+
+    }
+
+    .darkbrown a {
+      line-height: 2.5;
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .rel {
+      position: relative;
+    }
+
+    .abs {
+      position: absolute;
+    }
+
+    #topad .swiper-pagination {
+      /*이미 abs가 있음 */
+      text-align: right;
+      transform: translateY(-50%);
+      bottom: unset;
+      top: 50%;
+      left: unset;
+      right: 0;
+      width: auto;
+      color: white;
+      font-size: 0.9em;
+
+    }
+
+
+    #hd {
+      height: 150px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* 상단슬라이드 */
+
+    #mainBanner .swiper-slide {
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      background-color: aliceblue;
+    }
+
+    #mainBanner .container {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+  <script>
+    //제이쿼리 스크립트들
+  </script>
+</head>
+
+<body>
+  <header id="hd">
+    <div id="topad" class="darkbrown">
+      <div class="swiper container rel">
+        <div class="swiper-wrapper"> <!--스타일 건들면 안됨 -->
+          <div class="swiper-slide darkbrown">
+            <a href="">멤버쉽특가바로가기</a>
+          </div>
+          <div class="swiper-slide darkbrown">
+            <a href="">구독혜택</a>
+          </div>
+          <div class="swiper-slide darkbrown">
+            <a href="">신상품 바로가기</a>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <script>
+      //개별화
+      const swiperTop = new Swiper('#topad .swiper', {
+        loop: true, //순환
+        pagination: {
+          el: '#topad .swiper-pagination', //객체 
+          type: "fraction" //숫자
+        },
+        effect: "fade",
+
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+
+      });
+    </script>
+
+    <div class="container">
+      <!-- 상단컨텐츠 -->
+    </div>
+  </header>
+
+  <div id="mainBanner">
+    <!-- 9개의 슬라이드로 swiper 높이는 600 -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div class="container">
+        <div class="swiper-button-prev abs"></div>
+        <div class="swiper-button-next abs"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const swiperMain = new Swiper('#mainBanner .swiper', {
+
+      loop: true,
+      slidesPerView: 1.8,
+      spaceBetween: 1,
+      centeredSlides: true,
+
+      pagination: {
+        el: '#mainBanner .swiper-pagination',
+        type: "fraction"
+      },
+
+      navigation: {
+        nextEl: '#mainBanner .swiper-button-next',
+        prevEl: '#mainBanner .swiper-button-prev',
+      },
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+
+</body>
+
+</html>
