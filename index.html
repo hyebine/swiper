@@ -90,6 +90,7 @@
       font-size: 1.5em;
       background-color: aliceblue;
       border: 1px solid #ccc;
+      box-sizing: border-box;
     }
   </style>
 
@@ -168,7 +169,7 @@
     const swiperMain = new Swiper('#mainBanner .swiper', {
 
       loop: true,
-      loopAdditionalSlides : 1,
+      loopAdditionalSlides : 1, //첫슬라이드 앞으로 마지막 슬라이드 복사해서 넣어주기
       centeredSlides: true, //센터중심 
 
       pagination: {
