@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>swiper</title>
   <!-- 바로가기(파비콘) > SEO최적화 > 광고추적치 -->
   <!-- 폰트 -->
   <!-- 초기화 -->
@@ -38,7 +38,7 @@
     }
 
     .container {
-      width: 1280px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
@@ -91,6 +91,46 @@
       background-color: aliceblue;
       border: 1px solid #ccc;
       box-sizing: border-box;
+    }
+
+    /* 버튼 꾸미기  */
+
+
+    #mainBanner .swiper-button-prev:after,
+    #mainBanner .swiper-button-next:after {
+      display: none;
+    }
+
+    #mainBanner .swiper-button-prev,
+    #mainBanner .swiper-button-next {
+      width: 5rem;
+      height: 5rem;
+      border-top: 1px solid #ccc;
+    }
+
+    #mainBanner .swiper-button-prev {
+      transform: rotate(-45deg);
+      transform-origin: left;
+      /*회전축 왼쪽으로 */
+      border-left: 1px solid #ccc;
+    }
+
+    #mainBanner .swiper-button-prev:hover::before {
+      content: "prev";
+    }
+
+    
+    #mainBanner .swiper-button-next:hover::before {
+      content: "next";
+    }
+
+
+    #mainBanner .swiper-button-next {
+      transform: rotate(45deg);
+      transform-origin: right;
+      /*회전축 오른쪽으로 */
+
+      border-right: 1px solid #ccc;
     }
   </style>
 
@@ -160,8 +200,8 @@
 
       <div class="swiper-pagination"></div>
 
-      <div class="swiper-button-prev abs"></div>
-      <div class="swiper-button-next abs"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
 
     </div>
   </div>
@@ -169,7 +209,7 @@
     const swiperMain = new Swiper('#mainBanner .swiper', {
 
       loop: true,
-      loopAdditionalSlides : 1, //첫슬라이드 앞으로 마지막 슬라이드 복사해서 넣어주기
+      loopAdditionalSlides: 1, //첫슬라이드 앞으로 마지막 슬라이드 복사해서 넣어주기
       centeredSlides: true, //센터중심 
 
       pagination: {
