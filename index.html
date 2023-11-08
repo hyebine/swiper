@@ -78,8 +78,7 @@
     }
 
     #mainBanner .swiper {
-      overflow: visible;
-      !important
+      overflow: visible !important;
       /*너비가 엄청 큼 */
     }
 
@@ -160,7 +159,6 @@
 
       <div class="swiper-pagination"></div>
 
-
       <div class="swiper-button-prev abs"></div>
       <div class="swiper-button-next abs"></div>
 
@@ -170,8 +168,7 @@
     const swiperMain = new Swiper('#mainBanner .swiper', {
 
       loop: true,
-      slidesPerView: 1.8,
-      spaceBetween: 0,
+      loopAdditionalSlides : 1,
       centeredSlides: true, //센터중심 
 
       pagination: {
