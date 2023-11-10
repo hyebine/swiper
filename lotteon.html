@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>롯데몰</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- swiper cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans KR" !important;
+      line-height: 1;
+      /* 글자크기만큼 */
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .rel {
+      position: relative;
+    }
+
+    .ofh {
+      overflow: hidden;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    #lotteBanner .swiper-slide img {
+      max-width: 100%;
+      display: block;
+    }
+
+    #lotteBanner .btns * {
+      position: unset !important;
+    }
+
+    #lotteBanner .btns {
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 15px;
+
+    }
+
+    .btns .swiper-pagination {
+      width: auto;
+      font-weight: 700;
+    }
+
+    .btns {
+      margin-left: 10px;
+    }
+
+    .btns a {
+      color: #222;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      background-color: white;
+      color: #222;
+      font-size: 1rem;
+      padding: 1rem 1rem;
+
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+
+    .swiper-button-prev {
+      left: 0;
+    }
+
+    /* 토글 */
+    button {
+      background-color: transparent;
+      border: 0;
+    }
+
+    .toggle .bi .bi-pause {
+      font-size: 1.5rem;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lotteBanner" class="container rel">
+    <div class="swiper ofh">
+
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img
+              src="https://contents.lotteon.com/display/dshoplnk/41932/2/M001402/319622/PEF97133C4E8221CE3CA99F14F5314900D62ADEAB1E03DC51CD6CD8D56765190D/file/dims/optimize">
+          </a>
+        </div>
+
+      </div>
+
+      <div class="btns d-flex">
+        <div class="swiper-pagination"></div>
+        <button class="toggle bi bi-pause bi-play"></button>
+        <a href="">전체보기<i class="bi bi-plus-lg"></i></a>
+      </div>
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+  <script>
+
+    var swiperLotte = new Swiper('#lotteBanner .swiper', {
+      loop: true,
+      slidesPerView: 2,
+      spaceBetween: 40,
+      pagination: {
+        el: '#lotteBanner .swiper-pagination',
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: '#lotteBanner .swiper-button-next',
+        prevEl: '#lotteBanner .swiper-button-prev',
+      },
+      // breakpoints: {
+
+      //   320: {
+      //     slidesPerView: 1.2,
+      //     spaceBetween: 10
+      //   },
+
+      //   991: {
+      //     slidesPerView: 2.5,
+      //     spaceBetween: 30
+      //   },
+
+      //   1440: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 70
+      //   }
+      // }
+    });
+
+  </script>
+</body>
+
+</html>
