@@ -17,26 +17,107 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans KR" !important;
+      line-height: 1;
+      /* 글자크기만큼 */
+      font-weight: 400;
+    }
 
+    a {
+      text-decoration: none;
+    }
+
+    .abs {
+      position: absolute;
+    }
+
+    #mainBanner {
+      text-align: center;
+    }
+
+    #mainBanner .swiper-slide a {
+      display: block;
+    }
+
+    #mainBanner .swiper-slide img {
+      max-width: 100%;
+      /*내사이즈 그대로 나타날거야 a 태그에 맞춰줌 */
+      display: block;
+    }
+
+    #mainBanner .btns {
+      background-color: rgba(0, 0, 0, .5);
+      border-radius: 1rem;
+      display: inline-flex;
+      padding: 0.7rem 1.2rem;
+      margin-top: 1rem;
+
+    }
+
+    #mainBanner .btns .swiper-button-prev,
+    #mainBanner .btns .swiper-button-next {
+      height: auto;
+      /*unset 가능 */
+      width: auto;
+      margin: 0 12px;
+    }
+
+    #mainBanner .btns ::after {
+      font-size: 1rem;
+    }
+
+
+    #mainBanner .btns * {
+      position: unset !important;
+      color: white;
+
+    }
   </style>
 </head>
 
 <body>
   <div id="mainBanner">
-    <div class="swiper">
+    <div class="swiper container">
 
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://simage.lottechilsung.co.kr/display/corner/3905/VideoThumb_hearthyKids_PC.png">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://simage.lottechilsung.co.kr/display/corner/3905/VideoThumb_hearthyKids_PC.png">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://simage.lottechilsung.co.kr/display/corner/3905/VideoThumb_hearthyKids_PC.png">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://simage.lottechilsung.co.kr/display/corner/3905/VideoThumb_hearthyKids_PC.png">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://simage.lottechilsung.co.kr/display/corner/3905/VideoThumb_hearthyKids_PC.png">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://simage.lottechilsung.co.kr/display/corner/3905/VideoThumb_hearthyKids_PC.png">
+          </a>
+        </div>
       </div>
 
       <div class="btns">
-        <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
       </div>
     </div>
@@ -44,8 +125,13 @@
   <script>
     var swiper7mall = new Swiper('#mainBanner .swiper', {
       loop: true,
+      slidesPerView: 1.8,
+      spaceBetween: 70,
+      centeredSlides: true,
+
       pagination: {
         el: '#mainBanner .swiper-pagination',
+        type: "fraction",
       },
       navigation: {
         nextEl: '#mainBanner .swiper-button-next',
