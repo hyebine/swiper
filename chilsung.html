@@ -52,9 +52,8 @@
       background-color: rgba(0, 0, 0, .5);
       border-radius: 1rem;
       display: inline-flex;
-      padding: 0.7rem 1.2rem;
+      padding: 0.7rem 1rem;
       margin-top: 1rem;
-
     }
 
     #mainBanner .btns .swiper-button-prev,
@@ -69,12 +68,11 @@
       font-size: 1rem;
     }
 
-
     #mainBanner .btns * {
       position: unset !important;
       color: white;
-
     }
+
   </style>
 </head>
 
@@ -123,6 +121,7 @@
     </div>
   </div>
   <script>
+
     var swiper7mall = new Swiper('#mainBanner .swiper', {
       loop: true,
       slidesPerView: 1.8,
@@ -137,6 +136,23 @@
         nextEl: '#mainBanner .swiper-button-next',
         prevEl: '#mainBanner .swiper-button-prev',
       },
+      breakpoints: {
+
+        320: {
+          slidesPerView: 1.2,
+          spaceBetween: 10
+        },
+
+        991: {
+          slidesPerView: 2.5,
+          spaceBetween: 30
+        },
+
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 70
+        }
+      }
     });
 
   </script>
