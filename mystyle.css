@@ -1,5 +1,36 @@
-#mainBanner {}
+/* 공통클래스 */
+.d-flex {
+  display: flex;
+}
 
+.abs {
+  position: absolute;
+}
+
+.p-unset {
+  position: unset !important;
+}
+
+.border {
+  border: 1px solid white !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+
+/* 중앙정렬 */
+#mainBanner .btns {
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  z-index: 10000;
+  /*앞으로 보이기위해*/
+  /* line-height: 2rem; 지워도됨 */
+
+}
 
 
 /* 배경처리 : 찌그러지지않게 처리하기 반응형 */
@@ -26,4 +57,63 @@
 
 .bg3 {
   background-image: url(https://www.cj.co.kr/cj_files/main/visual/202308/1692251347164_0.jpg);
+}
+
+
+/* toggle */
+button {
+  background-color: transparent;
+}
+
+#mainBanner .toggle {
+  color: white;
+
+}
+
+
+/* pagination 꾸미기 */
+
+.swiper-pagination-bullets {
+  margin-left: 14px;
+
+}
+
+#mainBanner .swiper-pagination {
+  align-items: center;
+  display: flex;
+  /*inline block이 들어있어서 flex 추가 */
+}
+
+#mainBanner .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 3rem;
+  height: 8px;
+  opacity: 1;
+  margin: 0;
+  position: relative;
+  background-color: transparent;
+
+}
+
+.swiper-pagination-bullet::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: white;
+
+}
+
+
+#mainBanner .swiper-pagination-bullet-active {
+  background-color: transparent;
+}
+
+#mainBanner .swiper-pagination-bullet-active::before {
+  height: 3px;
 }
