@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- 부트스트랩 아이콘 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- 초기화 -->
+  <link href="
+https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+  <!-- 플러그인 css  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- css 연동 -->
+  <link rel="stylesheet" href="./mystyle.css">
+  <!-- swiper 플러그인 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- 외부연동 -->
+  <script src="./swiper.js"></script>
+</head>
+
+<body>
+  <div id="mainBanner" class="rel"> <!--바깥에 아이디 만들어서 넣어주기-->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg0"></div>
+        <div class="swiper-slide bg1"></div>
+        <div class="swiper-slide bg2"></div>
+        <div class="swiper-slide bg3"></div>
+      </div>
+      <div class="btns d-flex abs">
+        <button class="toggle border bi bi-pause"></button>
+        <div class="swiper-pagination p-unset"></div>
+      </div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
