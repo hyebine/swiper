@@ -61,14 +61,22 @@
 
 
 /* toggle */
-button {
+
+.toggle {
   background-color: transparent;
-}
-
-#mainBanner .toggle {
+  width: 2rem;
+  /*글자사이즈때문에 rem */
+  height: 2rem;
   color: white;
-
+  border-radius: 50%;
+  font-size: 1.2em;
+  /* 지금보다 커지고 싶을 때 나로부터 em */
 }
+
+#mainBanner .toggle.on::before {
+  content: "\F4F4";
+}
+
 
 
 /* pagination 꾸미기 */
@@ -106,7 +114,6 @@ button {
   right: 0;
   margin: auto;
   background-color: white;
-
 }
 
 
