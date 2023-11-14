@@ -124,3 +124,30 @@
 #mainBanner .swiper-pagination-bullet-active::before {
   height: 3px;
 }
+
+
+/* 11번가 상위객체의 배경색 바꾸기 */
+#mainBanner {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.realIndex0 {
+  background-color: red;
+}
+
+.realIndex1 {
+  background-color: orange;
+}
+
+.realIndex2 {
+  background-color: yellow;
+}
+
+.realIndex3 {
+  background-color: green;
+}
+
+.realIndex4 {
+  background-color: blue;
+}
