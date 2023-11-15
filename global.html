@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 2.X</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+  <script>
+    const naviinfo = {
+      ko: ["회사소개", "제품소개"],
+      en: ["company", "product"]
+    }
+
+    let litags = "";
+
+    $(function () {
+      for (x in naviinfo.en) {
+        litags += `<li>${naviinfo.en[x]}</li>`;
+        $("#gnb").html(litags);
+
+        $("#globalbtn button").eq(0).click(function () {
+          litags = "";
+
+          for (x in naviinfo.ko) {
+            litags += `<li>${naviinfo.ko[x]}</li>`;
+            $("#gnb").html(litags);
+          }
+
+
+        })
+        $("#globalbtn button").eq(1).click(function () {
+          litags = "";
+
+          for (x in naviinfo.en) {
+            litags += `<li>${naviinfo.en[x]}</li>`;
+            $("#gnb").html(litags);
+          }
+        })
+      }
+    })
+
+
+
+
+  </script>
+  <style>
+    .d-flex {
+      display: flex;
+    }
+
+    .justify-content-center {
+      justify-content: center;
+    }
+
+    .align-items-center {
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul id="gnb" class="d-flex justify-content-center align-items-center">
+
+    </ul>
+  </header>
+  <div id="globalbtn">
+    <button data-leng="ko">한국어</button>
+    <button data-leng="en">영어</button>
+  </div>
+
+</body>
+
+</html>

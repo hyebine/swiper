@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11번가 처럼 배너 구현하기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR';
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1240px;
+            margin: 0 auto;
+        }
+
+        .rel {
+            position: relative;
+        }
+
+        .abs {
+            position: absolute;
+        }
+
+        .p-unset {
+            position: unset !important;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .right-0 {
+            right: 0;
+        }
+
+        .bottom-0 {
+            bottom: 0;
+        }
+
+        .z-up {
+            z-index: 10000;
+        }
+
+        /* 플러그인 세팅 재설정하기 */
+        .swiper-button-prev:after {
+            content: "\F284";
+            font-family: bootstrap-icons !important;
+        }
+
+        .swiper-button-next:after {
+            content: "\F285";
+            font-family: bootstrap-icons !important;
+        }
+
+        /* 스탑플레이버튼 토글준비 */
+        .toggle button:after {
+            content: '\F4C4';
+            font-family: bootstrap-icons !important;
+        }
+
+        .toggle.stop button:after {
+            content: '\F593';
+        }
+
+        #shopBanner .btns *,
+        #shopBanner .btns *:after {
+            font-size: 1rem !important;
+            line-height: 2;
+            color: white !important
+        }
+
+        .btns {
+            padding: 1rem;
+        }
+
+        .btnbox {
+            background-color: rgba(0, 0, 0, .5);
+            margin: 0 0 0 1rem;
+            padding: 0 0.54rem;
+            border-radius: 1rem;
+        }
+
+        #shopBanner .swiper-pagination,
+        #shopBanner .swiper-pagination+a {
+            padding: 0 0.5rem;
+        }
+
+        .btnbox .swiper-button-prev,
+        .btnbox .swiper-button-next {
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+
+        button {
+            background-color: transparent;
+            border: 0;
+        }
+
+        #shopBanner {
+            transition: 0.5s;
+        }
+
+        .active0 #shopBanner {
+            background-color: red;
+        }
+        .active1 #shopBanner {
+            background-color: green;
+        }
+        .active2 #shopBanner {
+            background-color: yellow;
+        }
+        .active3 #shopBanner {
+            background-color: pink;
+        }
+        .active4 #shopBanner {
+            background-color: skyblue;
+        }
+        .active5 #shopBanner {
+            background-color: blanchedalmond;
+        }
+        .active6 #shopBanner {
+            background-color: rebeccapurple;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="shopBanner" data-ex="슬라이드가 돌아가면 나의 배경색을 수정해줘">
+        <div class="swiper container rel">
+            <div class="swiper-wrapper">
+                <!-- 여긴안돼 -->
+                <div class="swiper-slide" data-color="red">
+                    <a href="">
+                        <img
+                            src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/http://cdn.011st.com/ds/2023/11/07/1664/a5214360bcc77ec50d7441d348a91269.jpg">
+                    </a>
+                </div>
+                <div class="swiper-slide" data-color="yellow">
+                    <a href="">
+                        <img
+                            src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/11/7/2311071753419300146_705.jpg">
+                    </a>
+                </div>
+                <div class="swiper-slide" data-color="green">
+                    <a href="">
+                        <img
+                            src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/10/31/2310311333251001151_306.jpg">
+                    </a>
+                </div>
+                <div class="swiper-slide" data-color="orange">
+                    <a href="">
+                        <img
+                            src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/11/6/2311061358583401151_633.jpg">
+                    </a>
+                </div>
+                <div class="swiper-slide" data-color="pink">
+                    <a href="">
+                        <img
+                            src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/11/8/2311081341328500146_709.jpg">
+                    </a>
+                </div>
+                <div class="swiper-slide" data-color="black">
+                    <a href="">
+                        <img
+                            src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/http://cdn.011st.com/ds/2023/11/07/1664/b1d972a164b918d5a6b3cc3d218f8105.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="btns abs d-flex right-0 bottom-0 z-up">
+                <div class="btnbox toggle">
+                    <button></button>
+                </div>
+                <div class="btnbox d-flex">
+                    <div class="swiper-pagination p-unset"></div>
+                    <a href="" title="더보기"><i class="bi bi-plus-lg"></i></a>
+                </div>
+                <div class="btnbox d-flex">
+                    <div class="swiper-button-prev p-unset"></div>
+                    <div class="swiper-button-next p-unset"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var bgdata = "";
+        const swiperShop = new Swiper('#shopBanner .swiper', {
+            loop: true,
+            effect: 'fade',
+            autoplay: {
+                delay: 3000
+            },
+
+            pagination: {
+                el: '#shopBanner .swiper-pagination',
+                type: 'fraction'
+            },
+
+            navigation: {
+                nextEl: '#shopBanner .swiper-button-next',
+                prevEl: '#shopBanner .swiper-button-prev',
+            },
+            on: {
+                init: function () {
+                    document.body.classList = "active0"
+                },
+
+                realIndexChange: function () {
+                    // 버튼이 옮겨다닐때
+                    document.body.classList = "active" + this.realIndex;
+                    //classList 값을 받는 변수
+                    console.log(this)  //swiperShop
+                    //콘솔창에 this를 확인 하고 activeIndex를 봄
+
+
+                }
+            }
+
+        });
+
+          var togglestatu = true;
+
+        document.querySelector(".toggle").addEventListener("click", function () {
+
+            this.classList.toggle('stop');
+
+
+            togglestatu = this.classList.contains('stop');
+
+            if (togglestatu) {
+                swiperShop.autoplay.stop();
+
+            } else {
+                swiperShop.autoplay.start();
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

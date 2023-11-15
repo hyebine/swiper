@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 2.X</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        //컨덴츠의 데이터는 data - 속성으로 html에서 직접 관리가능
+        $(function () {
+            $("#trigger button").click(function () {
+                $("body").css("background", $(this).data("bg"));
+                $("#back").css("color", $(this).data("font"))
+                // $("#back span").html($(this).data("bg")) //id를 넣어줘야 나중에 충돌방지
+                $("#back span").html($(this).html()) //안에 태그 내용
+            
+            })
+        })
+    </script>
+    <style>
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trigger" class="d-flex justify-content-center align-items-center">
+        <button data-bg="#ff0000" data-font="white">빨강</button>
+        <button data-bg="#ffff00" data-font="black">노랑</button>
+        <button data-bg="#00ffff" data-font="black">시안</button>
+        <button data-bg="#0000ff" data-font="white">파랑</button>
+        <button data-bg="#000000" data-font="white">검정</button>
+    </div>
+    <p id="back">현재 배경색상은 <span></span> 입니다.</p>
+</body>
+
+</html>
