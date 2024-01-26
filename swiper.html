@@ -11,6 +11,26 @@
 
 <style>
   /* 메인스와이퍼 커스터마이징 */
+
+  .swiper .mybtn {
+    /* width: 1rem;
+    height: 1rem; */
+    width: auto;
+    height: auto;
+    /* border-radius: 16px; */
+    border: 2px solid red;
+    /* font-size: 0;
+    line-height: 0; */
+    background-color: transparent;
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .swiper .swiper-pagination-bullet-active {
+    width: 3rem;
+  }
+
+
   #mainSwiper .swiper-slide {
     max-height: 600px;
     height: 80vw;
@@ -44,8 +64,6 @@
   }
 
   /* newbrand */
-  #adSwiper {}
-
 </style>
 
 <body>
@@ -53,10 +71,10 @@
   <section id="mainSwiper">
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide" data-adtext="리액트">Slide 1</div>
+        <div class="swiper-slide" data-adtext="노드SQL">Slide 2</div>
+        <div class="swiper-slide" data-adtext="CMS">Slide 3</div>
+        <div class="swiper-slide" data-adtext="피그마">Slide 4</div>
       </div>
 
       <div class="swiper-pagination"></div>
@@ -96,12 +114,51 @@
 
   <script>
     // 메인스와이퍼
+    // const mainswiper = new Swiper('#mainSwiper .swiper', {
+
+    //   loop: true,
+
+    //   autoplay: {
+    //     delay: 4000,
+    //     disableOnInteraction: false,
+    //   },
+
+    //   pagination: {
+    //     el: "#mainSwiper .swiper-pagination",
+    //     clickable: true,
+    //     renderBullet: function (index, className) {
+    //       return `<span class=" ${className} mybtn mybtn${index} ">${index + 1}</span>`;
+    //     },
+    //   },
+
+    // });
+
+
+
+    let mainbtnArr = [];
+
+    document.querySelectorAll("#mainSwiper .swiper-slide").forEach((el, idx) => {
+      console.log(el.dataset)
+
+      mainbtnArr.push(el.dataset.adtext);
+    })
+
+
     const mainswiper = new Swiper('#mainSwiper .swiper', {
 
       loop: true,
 
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+
       pagination: {
-        el: '#mainSwiper .swiper-pagination',
+        el: "#mainSwiper .swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class=" ${className} mybtn mybtn${index} ">${mainbtnArr[index]}</span>`;
+        },
       },
 
     });
