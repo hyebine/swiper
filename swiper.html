@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- 메인스와이퍼 -->
+  <section id="mainSwiper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+    </div>
+  </section>
+  <!-- 세일스와이퍼 -->
+  <section id="adSwiper">
+    <div class="swiper sales">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+      </div>
+
+      <div class="swiper-scrollbar"></div>
+
+    </div>
+
+    <!-- 뉴브랜드 -->
+    <div class="swiper newbrand">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 2</div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </section>
+
+  <script>
+    // 메인스와이퍼
+    const mainswiper = new Swiper('#mainSwiper .swiper', {
+
+      loop: true,
+
+      pagination: {
+        el: '#mainSwiper .swiper-pagination',
+      },
+
+    });
+
+
+    //세일스와이퍼
+    const salesswiper = new Swiper('#adSwiper .swiper.sales', {
+      loop: true,
+
+      scrollbar: {
+        el: '#adSwiper .swiper.sales .swiper-scrollbar',
+      },
+    });
+
+
+    // 뉴브랜드
+
+    const swiper = new Swiper('#adSwiper .swiper.newbrand', {
+      direction: 'vertical',
+      loop: true,
+
+      pagination: {
+        el: '#adSwiper .swiper.newbrand .swiper-pagination',
+      },
+
+      navigation: {
+        nextEl: '#adSwiper .swiper.newbrand .swiper-button-next',
+        prevEl: '#adSwiper .swiper.newbrand .swiper-button-prev',
+      },
+
+      scrollbar: {
+        el: '#adSwiper .swiper.newbrand .swiper-scrollbar',
+      },
+    });
+
+
+  </script>
+</body>
+
+</html>
