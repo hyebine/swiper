@@ -11,25 +11,62 @@
 
 <style>
   /* 메인스와이퍼 커스터마이징 */
-
+  /* 
   .swiper .mybtn {
-    /* width: 1rem;
-    height: 1rem; */
+
     width: auto;
     height: auto;
-    /* border-radius: 16px; */
-    border: 2px solid red;
-    /* font-size: 0;
-    line-height: 0; */
     background-color: transparent;
     opacity: 1;
+
+    position: relative;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+  } */
+
+
+  .swiper .mybtn {
+    width: 0;
+    height: 3px;
+    background-color: white;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 0;
+  }
+
+  /* .swiper .mybtn:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: white;
     transition: 0.5s;
-  }
+  } */
 
-  .swiper .swiper-pagination-bullet-active {
-    width: 3rem;
-  }
 
+
+  /* .swiper .mybtn.swiper-pagination-bullet-active:after {
+    width: 100%;
+    transition: 2s;
+
+  } */
+
+
+
+
+  .swiper .mybtn.swiper-pagination-bullet-active {
+    width: 100%;
+    transition: 2s;
+
+  }
 
   #mainSwiper .swiper-slide {
     max-height: 600px;
@@ -49,6 +86,7 @@
 
   #adSwiper .swiper {
     width: 50%;
+    height: 200px;
   }
 
   #adSwiper .swiper-slide {
@@ -90,25 +128,22 @@
       </div>
 
       <div class="swiper-scrollbar"></div>
-
     </div>
 
     <!-- 뉴브랜드 -->
     <div class="swiper newbrand">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide" data-bg="#000">Slide 1</div>
+        <div class="swiper-slide" data-bg="#ff0000">Slide 2</div>
+        <div class="swiper-slide" data-bg="#ffff00">Slide 3</div>
+        <div class="swiper-slide" data-bg="#00ff00">Slide 3</div>
+        <div class="swiper-slide" data-bg="#fffff0">Slide 3</div>
+        <div class="swiper-slide" data-bg="#0000ff">Slide 3</div>
       </div>
 
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-
     </div>
   </section>
 
@@ -143,6 +178,9 @@
       mainbtnArr.push(el.dataset.adtext);
     })
 
+    document.querySelectorAll(".newSwiper .swiper-slide").forEach((el, idx) => {
+      el.style.backgroundColor = el.dataset.bg;
+    })
 
     const mainswiper = new Swiper('#mainSwiper .swiper', {
 
@@ -170,7 +208,7 @@
 
     const salesswiper = new Swiper('#adSwiper .swiper.sales', {
       loop: true,
-
+      direction: "vertical",
       scrollbar: {
         el: '#adSwiper .swiper.sales .swiper-scrollbar',
       },
@@ -181,7 +219,7 @@
 
     const newbrandswiper = new Swiper('#adSwiper .swiper.newbrand', {
       loop: true,
-
+      effect: "fade",
       pagination: {
         el: '#adSwiper .swiper.newbrand .swiper-pagination',
       },
@@ -189,6 +227,11 @@
       navigation: {
         nextEl: '#adSwiper .swiper.newbrand .swiper-button-next',
         prevEl: '#adSwiper .swiper.newbrand .swiper-button-prev',
+      },
+
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
       },
     });
 
